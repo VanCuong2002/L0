@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+}
+
+.box {
+    background-color: rgb(255, 245, 251);
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 4rem 3rem;
+}
+
+.box__header {
+    height: 50px;
+    width: 190px;
+    background-color: #8598cc;
+    font-size: 2.4rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e1e1e1;
+    font-weight: 300;
+}
+
+.box__heading {
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+}
+
+.box__heading span {
+    color: #00aeef;
+}
+
+.box__content {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #333;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.box__wrap {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.box__wrap-btn {
+    background-color: #2d3032;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.box__wrap-btn:hover {
+    opacity: .9;
+}
+
+.box__wrap-btn:first-child {
+    margin-right: 10px;
+}
+
+.box__wrap-btn:last-child {
+    margin-left: 10px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .box {
+        padding: 12px;
+    }
+
+    .box__wrap-btn:first-child {
+        margin-right: 15px;
+    }
+
+    .box__wrap-btn:last-child {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .box__wrap-btn {
+        width: 100%;
+    }
+
+    .box__wrap-btn:first-child {
+        margin-bottom: 8px;
+    }
+}

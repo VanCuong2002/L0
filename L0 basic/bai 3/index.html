@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 3</title>
+        <link rel="stylesheet" href="main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </head>
+
+    <body>
+        <div class="app">
+            <button onclick="appear()" class="btn-login">
+                Đăng nhập hệ thống
+            </button>
+            <!-- Form Login -->
+            <form id="form-1" class="form">
+                <i
+                    onclick="hide()"
+                    class="fa-solid fa-xmark form__exit-icon"
+                ></i>
+                <div class="form-wrap">
+                    <h3 class="form-heading">Member Login</h3>
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fa-solid fa-user form-icon"></i>
+                        </label>
+                        <input
+                            name="username"
+                            id="username"
+                            type="text"
+                            class="form-control"
+                            placeholder="Username"
+                        />
+                        <span class="form-message" id="username-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fa-sharp fa-solid fa-lock form-icon"></i>
+                        </label>
+                        <input
+                            name="password"
+                            id="password"
+                            type="password"
+                            class="form-control"
+                            placeholder="Password"
+                        />
+                        <span class="form-message" id="password-error"></span>
+                    </div>
+                    <!--Select -->
+                    <!-- <div class="form-group">
+                        <label for="city" class="form-label">
+                            <i class="fa-solid fa-tree-city form-icon"></i>
+                        </label>
+                        <select id="city" name="city" class="form-control">
+                            <option value="">__Chọn TP__</option>
+                            <option value="HN">Hà Nội</option>
+                            <option value="HN">Hà Nam</option>
+                            <option value="HP">Hải Phòng</option>
+                            <option value="HCM">TP.HCM</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div> -->
+                    <!-- Giới tính: Radio -->
+                    <!-- <div class="form-group">
+                        <label class="form-label">Giới tính:</label>
+                        <div class="gender">
+                            <input
+                                type="checkbox"
+                                name="gender"
+                                value="nam"
+                                id="gender-male"
+                            />
+                            <label for="gender-male">Nam</label>
+                        </div>
+                        <div class="gender">
+                            <input
+                                type="checkbox"
+                                name="gender"
+                                value="nữ"
+                                id="gender-female"
+                            />
+                            <label for="gender-female">Nữ</label>
+                        </div>
+                        <div class="gender">
+                            <input
+                                type="checkbox"
+                                name="gender"
+                                value="khác"
+                                id="gender-other"
+                            />
+                            <label for="gender-other">Khác</label>
+                        </div>
+                        <span class="form-message"></span>
+                    </div> -->
+
+                    <button id="submit" class="form-submit">
+                        <span class="text-login">Login</span>
+                        <i id="loading-icon" class="fa-solid fa-spinner"></i>
+                    </button>
+                </div>
+                <div onclick="forgot()" class="form-forgot">
+                    <span class="form-text">Forgot password?</span>
+                </div>
+            </form>
+
+            <!-- Form Change Password -->
+            <form id="form-2" class="form">
+                <i
+                    onclick="hide()"
+                    class="fa-solid fa-xmark form__exit-icon"
+                ></i>
+                <div class="form-wrap">
+                    <h3 class="form-heading">Thay đổi mật khẩu</h3>
+                    <div class="form-group">
+                        <label for="oldpassword">
+                            <i class="fa-solid fa-user form-icon"></i>
+                        </label>
+                        <input
+                            id="oldpassword"
+                            name="oldpassword"
+                            type="password"
+                            class="form-control"
+                            placeholder="Mật khẩu hiện tại"
+                        />
+                        <span
+                            class="form-message"
+                            id="oldpassword-error"
+                        ></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="newpassword">
+                            <i class="fa-sharp fa-solid fa-lock form-icon"></i>
+                        </label>
+                        <input
+                            id="newpassword"
+                            name="newpassword"
+                            type="password"
+                            class="form-control"
+                            placeholder="Mật khẩu mới"
+                        />
+                        <span
+                            class="form-message"
+                            id="newpassword-error"
+                        ></span>
+                    </div>
+                    <button class="form-submit">Save</button>
+                </div>
+                <div onclick="back()" class="form-forgot">
+                    <span class="form-text">Back</span>
+                </div>
+            </form>
+        </div>
+        <script src="app.js"></script>
+        <script>
+            Validator({
+                form: "#form-1",
+                formGroupSelector: ".form-group",
+                errorSelector: ".form-message",
+                rules: [
+                    Validator.isRequired(
+                        "#username",
+                        "Vui lòng nhập tài khoản"
+                    ),
+                    Validator.isRequired("#password", "Vui lòng nhập mật khẩu"),
+                ],
+                onSubmit: function (data) {
+                    var check = true;
+                    if (data.username !== "admin") {
+                        document.getElementById("username-error").innerText =
+                            "Tên đăng nhập không đúng";
+                        check = false;
+                    } else {
+                        document.getElementById("username-error").innerText =
+                            "";
+                    }
+                    if (data.password !== "12345") {
+                        document.getElementById("password-error").innerText =
+                            "Mật khẩu không chính xác";
+                        check = false;
+                    } else {
+                        document.getElementById("password-error").innerText =
+                            "";
+                    }
+
+                    if (check) {
+                        console.log(data);
+                        loading();
+                        setTimeout(function () {
+                            document.querySelector(".btn-login").style.display =
+                                "block";
+                            document.querySelector(".btn-login").innerText =
+                                "Đăng nhập thành công";
+                            document.getElementById("form-1").style.display =
+                                "none";
+                            document.getElementById("form-2").style.display =
+                                "none";
+                        }, 1000);
+                    }
+                },
+            });
+            // Form 2
+            Validator({
+                form: "#form-2",
+                formGroupSelector: ".form-group",
+                errorSelector: ".form-message",
+                rules: [
+                    Validator.isRequired(
+                        "#oldpassword",
+                        "Vui lòng nhập mật khẩu hiện tại"
+                    ),
+                    Validator.isRequired(
+                        "#newpassword",
+                        "Vui lòng nhập mật khẩu mới"
+                    ),
+
+                    Validator.minLength("#newpassword", 5),
+                ],
+                onSubmit: function (data) {
+                    var check = true;
+                    if (data.oldpassword !== "12345") {
+                        document.getElementById("oldpassword-error").innerText =
+                            "Sai mật khẩu hiện tại. Hãy thử lại.";
+                        check = false;
+                    } else {
+                        document.getElementById("oldpassword-error").innerText =
+                            "";
+                    }
+                    if (data.newpassword === "12345") {
+                        document.getElementById("newpassword-error").innerText =
+                            "Mật khẩu mới phải khác mật khẩu hiện tại.";
+                        check = false;
+                    } else {
+                        document.getElementById("password-error").innerText =
+                            "";
+                    }
+
+                    if (check) {
+                        console.log(data);
+                        setTimeout(function () {
+                            alert("Đổi mật khẩu thành công");
+                            document.querySelector(".btn-login").style.display =
+                                "block";
+                            document.querySelector(".btn-login").innerText =
+                                "Đăng nhập hệ thống";
+                            document.getElementById("form-1").style.display =
+                                "none";
+                            document.getElementById("form-2").style.display =
+                                "none";
+                        }, 1000);
+                    }
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 11</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <form action="/submit"  method="post" class="container">
+            <h4 class="heading">
+                Get in touch with us by filling contact form below
+            </h4>
+            <div class="wrapper-input">
+                <input
+                    type="text"
+                    placeholder="*Enter your full name"
+                />
+                <input
+                    type="email"
+                    placeholder="*Enter your email address"
+                />
+            </div>
+            <input
+                type="text"
+                placeholder="Enter your subject"
+            />
+            <textarea
+                name="message"
+                rows="6"
+                cols="50"
+                placeholder="*Your message here..."
+            ></textarea>
+
+            <div class="wrapper-submit">
+                <button class="btn-submit">Send message</button>
+                <span class="notice"
+                    >*Please fill all required form field, thanks!</span
+                >
+            </div>
+        </form>
+    </body>
+</html>

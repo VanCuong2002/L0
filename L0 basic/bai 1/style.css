@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.A1 {
+    width: 1000px;
+    height: 2000px;
+    border: 5px solid red;
+}
+
+.A2 {
+    width: 500px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 5px solid brown;
+}
+
+.A3 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 80px;
+    border: 5px solid orangered;
+}
+
+.A4 {
+    width: 700px;
+    height: 430px;
+    border: 5px solid #0ab9d1;
+    margin-top: 85px;
+    position: relative;
+}
+
+.A5 {
+    position: sticky;
+    position: -webkit-sticky;
+    left: 200px;
+    border: 5px solid violet;
+    width: 300px;
+    height: 150px;
+    top: calc(50% - 100px);
+}
+
+.A6 {
+    position: absolute;
+    border: 5px solid yellow;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}

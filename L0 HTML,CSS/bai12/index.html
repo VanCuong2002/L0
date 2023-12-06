@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bài 12</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1 class="header__title">Contact Us</h1>
+                <span class="header__space"></span>
+            </div>
+            <div class="content">
+                <div class="contact">
+                    <h4 class="contact__title">Contact Info</h4>
+                    <div class="contact__info">
+                        <i class="fa-solid fa-location-dot contact__icon"></i>
+                        <span class="contact__name">321 Awesome Street</span>
+                    </div>
+                    <div class="contact__info">
+                        <i class="fa-regular fa-envelope contact__icon"></i>
+                        <span class="contact__name">info@gmail.com</span>
+                    </div>
+                    <div class="contact__info">
+                        <i class="fa-solid fa-phone contact__icon"></i>
+                        <span class="contact__name">+1 800 123 1234</span>
+                    </div>
+                </div>
+                <div class="feedback">
+                    <h4 class="feedback__title">
+                        Having Any Query! Or Book an appointment
+                    </h4>
+                    <form action="/submit" method="get" class="feedback__form">
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Your Email"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Subject"
+                        />
+                        <textarea
+                            name="message"
+                            rows="6"
+                            cols="50"
+                            placeholder="Message"
+                        ></textarea>
+
+                        <button class="btn-submit">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

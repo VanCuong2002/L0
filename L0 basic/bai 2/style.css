@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.list-item {
+	margin: 50px 0;
+    display: flex;
+	overflow: hidden;
+	list-style: none;
+    flex-flow: row wrap;
+}
+
+.item {
+    display: block;
+    height: 50px;
+    overflow: hidden;
+    color: white;
+}
+
+/* Responsive */
+@media screen and (min-width: 320px) {
+    .list-item > .item:nth-of-type(odd) {
+        width: 20px;
+        background-color: red;
+    }
+
+    .list-item > .item:nth-of-type(even) {
+        width: 30px;
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .list-item > .item:nth-of-type(odd) {
+        width: 20px;
+        background-color: yellow;
+    }
+
+    .list-item > .item:nth-of-type(even) {
+        width: 50px;
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .list-item > .item:nth-of-type(odd) {
+        width: 30px;
+		/* Màu xanh nâu */
+        background-color: #2F4F4F; 
+    }
+
+    .list-item > .item:nth-of-type(even) {
+        width: 40px;
+        background-color: yellow;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .list-item > .item:nth-of-type(odd) {
+        width: 30px;
+        background-color: yellow;
+    }
+
+    .list-item > .item:nth-of-type(even) {
+        width: 40px;
+        background-color: purple;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .list-item > .item:nth-of-type(odd) {
+        width: 50px;
+        background-color: purple;
+    }
+
+    .list-item > .item:nth-of-type(even) {
+        width: 100px;
+        background-color: pink;
+    }
+}
